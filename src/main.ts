@@ -1,14 +1,24 @@
-import './assets/main.css'
+import { createPinia } from 'pinia';
+import PrimeVue from 'primevue/config';
+import { createApp } from 'vue';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import 'primeicons/primeicons.css';
+import '@/styles/main.css';
+import App from '@/App.vue';
+import { preset } from '@/plugin/primevuePreset.ts';
+import router from '@/router';
 
-import App from './App.vue'
-import router from './router'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
+app.use(router);
+app.use(PrimeVue, {
+    theme: {
+        preset: preset,
+        options: {
+            darkModeSelector: 'class',
+        },
+    },
+});
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app.mount('#app');
