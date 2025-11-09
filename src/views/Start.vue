@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Button from 'primevue/button';
+import Header from '@/components/Header.vue';
 </script>
 <template>
-    <Button>Start</Button>
+    <Header />
 </template>

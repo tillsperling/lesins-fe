@@ -1,8 +1,9 @@
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
 import { createApp } from 'vue';
-
+import '@fontsource/libre-caslon-text';
 import 'primeicons/primeicons.css';
+
 import '@/styles/main.css';
 import App from '@/App.vue';
 import { preset } from '@/plugin/primevuePreset.ts';
