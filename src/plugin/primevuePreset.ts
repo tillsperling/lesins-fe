@@ -100,4 +100,11 @@ export const preset = definePreset(Lara, {
             },
         },
     },
+    components: {
+        card: {
+            root: {
+                shadow: 'none',
+            },
+        },
+    },
 });

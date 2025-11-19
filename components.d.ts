@@ -12,10 +12,13 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
+    Card: typeof import('primevue/card')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     Login: typeof import('./src/components/Login.vue')['default']
     Logo: typeof import('./src/components/Logo.vue')['default']
     Logout: typeof import('./src/components/Logout.vue')['default']
+    Motion: typeof import('motion-v')['Motion']
+    RecipeCard: typeof import('./src/components/recipe/RecipeCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

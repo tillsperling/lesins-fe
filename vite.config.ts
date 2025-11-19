@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
 
 import vue from '@vitejs/plugin-vue';
+import MotionResolver from 'motion-v/resolver';
 import { PrimeVueResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 
@@ -13,7 +14,8 @@ export default defineConfig({
         vue(),
         vueDevTools(),
         Components({
-            resolvers: [PrimeVueResolver()],
+            dts: true,
+            resolvers: [PrimeVueResolver(), MotionResolver()],
         }),
     ],
     resolve: {

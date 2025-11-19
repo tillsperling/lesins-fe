@@ -1,11 +1,22 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import Logo from '@/components/Logo.vue';
+
+const emit = defineEmits<{
+    toggleDrawer: [];
+}>();
+</script>
 
 <template>
-    <div>
-        <Button icon="pi pi-search" variant="text" rounded aria-label="Search" />
-        <Logo />
-        <Button icon="pi pi-plus" variant="text" rounded aria-label="Add" />
-    </div>
+    <Button
+        aria-label="Menu"
+        class="justify-self-start rotate-90"
+        icon="pi pi-pause"
+        rounded
+        variant="text"
+        @click="emit('toggleDrawer')"
+    />
+    <Logo />
+    <Button aria-label="Add" class="justify-self-end" icon="pi pi-plus" rounded variant="text" />
 </template>
 
 <style scoped></style>

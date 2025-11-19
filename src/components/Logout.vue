@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useAuth0 } from '@auth0/auth0-vue';
 
 const { logout, isLoading } = useAuth0();
 
-const handleLogout = () => {
-    logout({
+const handleLogout = async () => {
+    await logout({
         logoutParams: {
             returnTo: window.location.origin,
         },
@@ -13,7 +13,7 @@ const handleLogout = () => {
 </script>
 
 <template>
-    <button @click="handleLogout" class="button logout" :disabled="isLoading">
+    <Button :disabled="isLoading" class="w-full" rounded @click="handleLogout">
         {{ isLoading ? 'Loading...' : 'Log Out' }}
-    </button>
+    </Button>
 </template>
